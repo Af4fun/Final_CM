@@ -10,6 +10,7 @@
     "build": "cross-env BUILD_MODE=prod webpack "
   },
   "dependencies": {
+    "@babel/runtime": "^7.6.3",
     "axios": "^0.19.0",
     "classname": "^0.0.0",
     "fastclick": "^1.0.6",
@@ -22,6 +23,7 @@
   "devDependencies": {
     "@babel/core": "^7.6.2",
     "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "@babel/plugin-transform-runtime": "^7.6.2",
     "@babel/preset-env": "^7.6.2",
     "autoprefixer": "^8.6.4",
     "babel-core": "^6.26.3",
@@ -29,7 +31,6 @@
     "babel-loader": "8.0.0-beta.0",
     "babel-plugin-import": "^1.11.0",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
-    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-2": "^6.24.1",
     "clean-webpack-plugin": "^0.1.19",

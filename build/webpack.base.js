@@ -29,7 +29,20 @@ module.exports = {
       {
         test: /\.js$/, // 处理es6语法
         exclude: /node_modules/,
-        use: ['babel-loader']
+        // use: ['babel-loader']
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              ['@babel/preset-env', {
+                targets: {
+                  browsers: ['>1%', 'last 2 versions']
+                  // chrome: '52'
+                }
+              }]
+            ]
+          }
+        },
       },
       {
         test: /\.(png|svg|jpg|gif)$/, // 处理图片

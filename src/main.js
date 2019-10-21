@@ -3,7 +3,7 @@ import FastClick from 'fastclick';
 import Nerv from 'nervjs';
 import Bgm from '@/assets/audio/music.mp3';
 import App from './app.jsx';
-import { wxConfig } from '@/utils/wxconfig';
+// import { wxConfig } from '@/utils/wxconfig';
 
 window.videoUrl = 'https://outin-c6f82dc5d5b911e99ad400163e1a625e.oss-cn-shanghai.aliyuncs.com/sv/12142eeb-16def4f975a/12142eeb-16def4f975a.mp4?Expires=1571682363&OSSAccessKeyId=LTAI8bKSZ6dKjf44&Signature=y95xtyIL0%2BwF0ICnQmVKtm5n%2FFE%3D';
 const player = document.createElement('audio');
@@ -29,7 +29,7 @@ document.getElementById('share_arrow').addEventListener('click', function () {
 
 window.saveList = Array.apply(undefined, { length: 8 });
 
-wxConfig();
+// wxConfig();
 
 Nerv.render(
   <App />,
