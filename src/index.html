@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="renderer" content="webkit" />
+  <meta http-equiv="x-ua-Compatible" content="IE=Edge,chrome=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0,user-scalable=no" />
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+  <meta content="telephone=no" name="format-detection" />
+  <meta content="email=no" name="format-detection" />
+  <title>成都马拉松</title>
+  <link rel="stylesheet" href="<%=process.env.ASSET_PATH %>static/css/normalize.css">
+  <link rel="stylesheet" href="<%=process.env.ASSET_PATH %>static/css/base.css">
+  <script src="<%= process.env.ASSET_PATH %>static/js/flexible.js"></script>
+</head>
+
+<body>
+
+  <div class="common_container" id='app'>
+    <div class="loading" id='loading'>
+      <div class="bg"></div>
+      <div class="bar">
+        <div class="container" id='bar'></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="share_arrow" id='share_arrow'>
+    <div class="mock">
+      <div class="content">
+        <p>点击右上角的分享按钮</p>
+        <p>分享给好友</p>
+      </div>
+    </div>
+  </div>
+  <!-- <script src ='https://cdn.staticfile.org/eruda/1.5.8/eruda.min.js'></script>
+  <script>
+    eruda.init()
+  </script> -->
+</body>
+
+</html>

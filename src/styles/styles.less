@@ -1,0 +1,427 @@
+@zIndex: 10;
+*{
+    -webkit-touch-callout:none;
+  -webkit-user-select:none;
+  -khtml-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+}
+@keyframes moveUp {
+    0%{
+        background-position-y: 0px;
+    }
+    25%{
+        background-position-y: -20px;
+    }
+    50%{
+        background-position-y: 0px;
+    }
+    75%{
+        background-position-y: -20px;
+    }
+}
+@keyframes moveDown {
+    0%{
+        background-position-y: -20px;
+    }
+    25%{
+        background-position-y: 0px;
+    }
+    50%{
+        background-position-y: -20px;
+    }
+    75%{
+        background-position-y: 0px;
+    }
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    -webkit-touch-callout:none;
+}
+
+.common_container{
+    width: 750px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.video_wrap{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 750px;
+    height: 100%;
+    z-index: 1;
+    background: #000;
+    video{
+        left: 0;
+        width: 750px;
+        position: absolute;
+        display: block;
+        top: 50%;
+        height: 1334px;
+        margin-top: -666.66px;
+    }
+}
+
+.loading {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: @zIndex;
+    .bg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: @zIndex + 2;
+        background: url('~@/assets/pic/loading_bg.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    .bar{
+        position: absolute;
+        left: 212px;
+        top: 50%;
+        transform: translateY(500px);
+        width: 340px;
+        height: 20px;
+        background: black;
+        .container{
+            background-color: #ffffff;
+            width: 20%;
+            height: 100%;
+            transition: all 2s ease;
+        }
+    }
+}
+
+.start{
+    left: 0;
+    width: 750px;
+    position: absolute;
+    display: block;
+    top: 50%;
+    height: 1334px;
+    margin-top: -666.66px;
+    background-image: url('~@/assets/pic/start_bg.png');
+    background-size: 100%;
+    background-position: center center;
+    z-index: @zIndex+2;
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        .text{
+            width: 100%;
+            height: 600px;
+            background-image: url('~@/assets/pic/ready_txt.png');
+            background-size: 80%;
+            background-position: center -20px;
+            background-repeat: no-repeat;
+            animation: moveDown 3s infinite;
+        }
+        .trigger{
+            background-image: url('~@/assets/pic/ready_btn.png');
+            width: 250px;
+            height: 160px;
+            margin: 0 auto 20px;
+            background-size: 100% 100%;
+            background-position: center center;
+            animation: moveUp 3s infinite;
+            position: relative;
+            -webkit-touch-callout:none;
+        }
+    }
+}
+
+.playing{
+    left: 0;
+    width: 750px;
+    position: absolute;
+    display: block;
+    top: 50%;
+    height: 1334px;
+    margin-top: -666.66px;
+    z-index: @zIndex + 1;
+    .take_pic{
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        z-index: @zIndex + 2;
+        background-image: url('~@/assets/pic/take_pic.png');
+        background-size: 100% 100%;
+        background-position: center center;
+    }
+    .ablum_btn{
+        position: absolute;
+        left: 80px;
+        bottom: 70px;
+        z-index: @zIndex + 20;
+        width: 140px;
+        height: 60px;
+        background-image: url('~@/assets/pic/ablum_icon.png');
+        background-size: 100% 100%;
+        background-position: center center;
+    }
+    .ablum_tip{
+        position: absolute;
+        left: 20px;
+        bottom: 50px;
+        z-index: @zIndex + 4;
+        width: 60px;
+        height: 120px;
+        background-image: url('~@/assets/pic/ablum_tip.png');
+        background-size: 100% 100%;
+        background-position: center center;
+    }
+    .btn{
+        position: absolute;
+        left: 50%;
+        bottom: 50px;
+        z-index: @zIndex + 3;
+        margin-left: -125px;
+        width: 250px;
+        height: 160px;
+        background-image: url('~@/assets/pic/long_touch_btn.png');
+        background-size: 100% 100%;
+        background-position: center center;
+        -webkit-touch-callout:none;
+    }
+}
+
+.ending{
+    left: 0;
+    width: 750px;
+    position: absolute;
+    display: block;
+    top: 50%;
+    height: 1334px;
+    margin-top: -666.66px;
+    z-index: @zIndex+20;
+    background-color: #000000;
+    .text{
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        z-index: @zIndex + 2;
+        background-image: url('~@/assets/pic/ablum_bg.png');
+        background-size: 100% 100%;
+        background-position: center center;
+    }
+    .top{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        position: absolute;
+        bottom: 650px;
+        z-index: @zIndex + 3;
+    }
+    @btnWidth: 210px;
+    @btnHeight: 70px;
+    .btn_inline{
+        width: @btnWidth;
+        height: @btnHeight;
+        background-size: 100% 100%;
+        background-position: center center;
+        &.again {
+            background-image: url('~@/assets/pic/icon_again.jpg');
+        }
+        &.share {
+            background-image: url('~@/assets/pic/icon_share.jpg');
+        }
+    }
+    .btn_jump{
+        position: absolute;
+        left: 50%;
+        bottom: 450px;
+        z-index: @zIndex + 3;
+        margin-left: -@btnWidth/2;
+        width: @btnWidth;
+        height: @btnHeight;
+        background-image: url('~@/assets/pic/icon_5g.jpg');
+        background-size: 100% 100%;
+        background-position: center center;
+    }
+    .btn_music{
+        position: absolute;
+        left: 50%;
+        bottom: 250px;
+        z-index: @zIndex + 3;
+        margin-left: -@btnWidth/2;
+        width: @btnWidth;
+        height: @btnHeight;
+        background-image: url('~@/assets/pic/icon_music.jpg');
+        background-size: 100% 100%;
+        background-position: center center;
+    }
+}
+.show_pic{
+    position: fixed;
+    z-index: 20;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .content{
+        width: 600px;
+        height: 600px;
+        border: 10px solid #ffffff;
+        position: relative;
+        img{
+            max-width: 100%;
+        }
+        .btns{
+            position: absolute;
+            height: 80px;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            div{
+                margin: 10px 30px;
+                width: 180px;
+                height: 80px;
+                &.back{
+                    background-image: url('~@/assets/pic/back_btn.png');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                }
+                &.share{
+                    background-image: url('~@/assets/pic/share_btn.png');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                }
+            }
+        }
+    }
+}
+
+.show_ablum{
+    left: 0;
+    width: 750px;
+    position: absolute;
+    display: block;
+    top: 50%;
+    height: 1334px;
+    margin-top: -666.66px;
+    z-index: @zIndex+20;
+    background-image: url('~@/assets/pic/ablum_bg.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    .content{
+        width: 100%;
+        height: 100%;
+        color: #ffffff;
+        font-size: 42px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .head{
+            padding: 40px 30px;
+            margin-bottom: 200px;
+        }
+
+        .ablum_list{
+            padding-left: 30px;
+            overflow: scroll;
+            white-space: nowrap;
+            height: 400px;
+            .item{
+                display: inline-block;
+                width: 250px;
+                height: 300px;
+                background: #ffffff;
+                margin-right: 30px;
+                background-image: url('~@/assets/pic/img_bg.png');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+
+        .tip{
+            padding: 10px 0;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .btn{
+            margin: 0 auto;
+            width: 346px;
+            height: 84px;
+            background-size: 100% 100%;
+            background-position: center center;
+            background-image: url('~@/assets/pic/back_btn.png');
+        }
+    }
+}
+
+.share_arrow{
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    .mock{
+        width: 100%;
+        height: 100%;
+        background: rgba(#000000, .8);
+        display: flex;
+        justify-content: flex-end;
+        .content{
+            width: 90%;
+            height: 400px;
+            background-size: 100% 100%;
+            background-position: center center;
+            background-image: url('~@/assets/pic/guide.png');
+            color: #ffffff;
+            text-align: center;
+            font-size: 48px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-end;
+            padding-bottom: 100px;
+            p{
+                width: 480px;
+                text-align: center;
+                margin-left: 40px;
+                margin-top: 40px;
+            }
+        }
+    }
+}
